@@ -60,7 +60,7 @@ app.use("/api/v1/posts", postsRoute);
 app.use("/api/v1/users", usersRoute);
 app.get("/api", function (req, res) {
   console.log("object");
-  res.send("<h1>d!!!!!</h1>");
+  res.send("<h1>d</h1>");
 });
 app.listen(5000, () => {
   console.log("server is running");

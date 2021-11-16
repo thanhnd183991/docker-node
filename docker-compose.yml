@@ -9,6 +9,7 @@ services:
 
   node-app:
     build: .
+    image: ducthanh/node-app
     environment:
       - PORT=5000
     depends_on:
