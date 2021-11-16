@@ -10,6 +10,7 @@ const {
   REDIS_PORT,
   SESSION_SECRET,
 } = require("./config/config.js");
+const cors = require("cors");
 const postsRoute = require("./routes/postsRoute.js");
 const usersRoute = require("./routes/usersRoute.js");
 const redis = require("redis");
@@ -40,6 +41,7 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 app.enable("trust proxy");
+app.use(cors());
 app.use(
   session({
     store: new RedisStore({ client: redisClient }),
